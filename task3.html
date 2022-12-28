@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<title>
+    Task2
+</title>
+
+</html>
+
+<body>
+    <input type="text" id="k" />
+    <input type="text" id="v" />
+    <button onclick="printAllKeys()">add</button>
+    <p id="demo"></p>
+</body>
+<script>
+    var d = {};
+    function printAllKeys() {
+        var html = '';
+        var k = document.getElementById('k').value;
+        var v = document.getElementById('v').value;
+        d[k] = v;
+        console.log(d);
+        document.getElementById('demo').innerHTML += "Key: " + k + "<br>";
+    }
+</script>

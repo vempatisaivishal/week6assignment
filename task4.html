@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="demo"></p>
+
+    <script>
+        const fifa_scorers = [
+            { name: "Kylian Mbappe" },
+            { name: "Messi" },
+            { name: "Olivier" },
+            { name: "Julain" },
+            { name: "Marcus" }
+        ];
+        var results = fifa_scorers.map(function (item) {
+            if (item.name == "Kylian Mbappe" || item.name == "Messi") {
+                return {
+                    goals: "5",
+                    hero: item.name
+                }
+            }
+            else if (item.name == "Olivier" || item.name == "Julain") {
+                return {
+                    goals: "4",
+                    hero: item.name
+                }
+            }
+            else if (item.name == "Marcus") {
+                return {
+                    goals: "3",
+                    hero: item.name
+                }
+            }
+            ;
+        });
+
+        console.log(results);
+        document.getElementById("demo").innerHTML += JSON.stringify(results);
+
+    </script>
+</body>
+
+</html>

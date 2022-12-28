@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<title>
+    Task3
+</title>
+
+</html>
+
+<body>
+    <input type="text" id="k" />
+    <input type="text" id="v" />
+    <button onclick="convertObjectToList()">add</button>
+    <p id="demo"></p>
+</body>
+<script>
+    var d = [];
+    function convertObjectToList() {
+        var html = '';
+        var k = document.getElementById('k').value;
+        var v = document.getElementById('v').value;
+        d.push([k, v]);
+        console.log(d);
+        document.getElementById('demo').innerHTML += JSON.stringify(d) + "<br>";
+    }
+</script>

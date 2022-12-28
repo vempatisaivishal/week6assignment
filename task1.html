@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <p id="demo"></p>
+    <p id="demo1"></p>
+    <p id="demo2"></p>
+    <p id="demo3"></p>
+</body>
+<script>
+    const dog = {
+        name: 'Gabar',
+        activities: ['play', 'eat dog food'],
+        dogFriends: [
+            {
+                name: 'Ira',
+                activities: ['be grumpy', 'eat bread omlette'],
+                weight: 8,
+                furcolor: 'white'
+            },
+            {
+                name: 'Snowy',
+                activities: ['sleep', 'pre-sleep naps'],
+                weight: 3
+            }
+        ]
+    }
+    console.log(dog.name);
+    document.getElementById("demo").innerHTML += dog.name + " sorry, ";
+    dog.name = 'Gabbar';
+    console.log(dog.name);
+    document.getElementById("demo").innerHTML += dog.name + " is my Dog and it has " + dog.dogFriends.length + " Friends ";
+    dog.dogFriends.forEach(func);
+    function func(item, index, arr) {
+        document.getElementById("demo").innerHTML += arr[index]['name'];
+        if (index != arr.length - 1) {
+            document.getElementById("demo").innerHTML += " and ";
+        }
+    }
+    dog['height'] = 10;
+    dog['weight'] = 5;
+    dog.dogFriends.forEach(func1);
+    function func1(item, index, arr) {
+        document.getElementById("demo1").innerHTML += "Activities of " + arr[index]['name'] + " are " + arr[index]['activities'] + "<br>";
+    }
+    document.getElementById("demo2").innerHTML += "weight of ";
+    let w = 0;
+    function func2(item, index, arr) {
+        document.getElementById("demo2").innerHTML += arr[index]['name'];
+        if (index != arr.length - 1) {
+            document.getElementById("demo2").innerHTML += " and ";
+        }
+        w += arr[index]['weight'];
+    }
+    dog.dogFriends.forEach(func2);
+    document.getElementById("demo2").innerHTML += " is " + w;
+    let a = 0;
+    document.getElementById("demo3").innerHTML += "Total number of activities of ";
+    document.getElementById("demo3").innerHTML += dog.name + ", ";
+    a += dog.activities.length;
+    function func3(item, index, arr) {
+        document.getElementById("demo3").innerHTML += arr[index]['name'];
+        if (index != arr.length - 1) {
+            document.getElementById("demo3").innerHTML += " and ";
+        }
+        a += arr[index]['activities'].length;
+    }
+    dog.dogFriends.forEach(func3);
+    document.getElementById("demo3").innerHTML += " is " + a;
+    dog.dogFriends.forEach(func4);
+    function func4(item, index, arr) {
+        arr[index]['activities'].push('Play', 'Dig');
+    }
+    dog.dogFriends[0]['furcolor'] = 'Brown';
+    console.log(dog);
+</script>
+
+</html>
